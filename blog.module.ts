@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from 'shared';
 
 import { BlogComponent } from './blog.component';
+import { ContentModule } from '../content/content.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, ContentModule],
   declarations: [BlogComponent],
   entryComponents: [BlogComponent]
 })
