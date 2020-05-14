@@ -1,2 +1,8 @@
-<span>This is where blog articles will appear</span>
-{{ publishedContent.content }}
+<h1>Should there be a master title here?</h1>
+
+<div class="card" *ngFor="let blogContent of keys()">
+  <div class="card-header">
+    <a href=" {{ blogMetadata[blogContent].permaLink }}">{{ blogMetadata[blogContent].title }}</a>
+  </div>
+  <div class="card-text" [innerHTML]="blogMetadata[blogContent].content | safe: 'html' "></div>
+</div>
