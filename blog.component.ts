@@ -22,15 +22,23 @@ export class BlogComponent implements OnInit {
   testValue: string = "test"
   private blogMetadata = mockBlogMetadata;
 
-  constructor(navigationService: NavigationService, private router: Router) {
+  constructor(navigationService: NavigationService, private route: ActivatedRoute, private router: Router) {
     this.navigationService = navigationService;
-    console.log("blog:constructor");
+    console.log("blog:constructor", router);
 
-    // Plugins that add navigation items should do so here if possible.  Do not
-    //  put navigationService.add*NavigationItem() in ngOnInit, as it will cause
-    //  errors
-    let newItem = new NavigationItem(7, "Blog");
-    navigationService.addPrimaryNavigationItem(newItem);
+    // let currentRoutes = router.config;
+    // currentRoutes.push({
+    //   path: "blog",
+    //   component: BlogComponent
+    // });
+    // router.resetConfig(currentRoutes);
+    // console.log("blog:constructor", router);
+    //
+    // // Plugins that add navigation items should do so here if possible.  Do not
+    // //  put navigationService.add*NavigationItem() in ngOnInit, as it will cause
+    // //  errors
+    // let newItem = new NavigationItem(7, "Blog");
+    // navigationService.addPrimaryNavigationItem(newItem);
 
     // Initialise this component so that it exists (while being blank) when the
     //  template calls for it.
